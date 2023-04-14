@@ -16,29 +16,45 @@ ul {
   list-style: none;
 }
 
-.heading-top {
-  height: 100px;
+.h-100 {
+  margin-top: 20px;
+  height: 60px;
+}
+
+.fixed-nav {
+  position: fixed;
 }
 /* main */
 .header {
-  height: 550px;
-  background-image: url("../assets/img/header_backgroun\(4\).png");
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-image: url("../assets/img/home_page/header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header .fixed-box {
+  display: flex;
+  justify-content: space-around;
 }
 
 .header .logo {
   float: left;
-  width: 20%;
+  text-align: center;
+  width: 25%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .header .nav {
-  float: left;
-  width: 60%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffcad4;
+  border-radius: 10px;
+  margin-top: 60px;
 }
 
 .header .nav > ul > li {
@@ -46,42 +62,84 @@ ul {
 }
 
 .nav li > a {
-  color: #fff;
-  padding: 15px 30px;
+  color: #370617;
+  padding: 15px 25px;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .nav > ul > li:hover > a {
-  color: #cd9b33;
+  color: #ff0054;
   text-decoration: none;
-  border-bottom: 1px solid #cd9b33;
+  border-bottom: 1px solid #ff0054;
   transition: all 1s;
 }
 
 .nav .sub-menu {
   display: none;
-  margin-top: 12px;
+  margin-top: 15px;
   position: absolute;
 }
 
 .nav li:hover .sub-menu {
   display: block;
+  transform: translateX(-30px);
 }
 
 .sub-menu li a {
-  background-color: #cd9b33;
+  background-color: #f3d0d6;
   padding: 15px 50px;
   display: block;
 }
 
 .sub-menu li:hover > a {
-  color: #fff;
+  color: #ff0054;
   text-decoration: none;
-  background-color: #8b8b8b;
-  border-bottom: 1px solid #8b8b8b;
+  border-bottom: 1px solid #ff0054;
   transition: all 1s;
 }
 
 .header .cart {
+  text-align: center;
   float: left;
-  width: 20%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: 75px;
+}
+
+.cart a {
+  color: #000;
+  transition: all 1s;
+}
+
+.cart i {
+  font-weight: 800;
+}
+
+.cart:hover a {
+  color: #fdafbd;
+  transition: all 1s;
+}
+
+/* end header */
+
+.main-body {
+  width: 100%;
+}
+
+.main-body .fst-content {
+}
+
+.main-body .intro-menu {
+}
+
+.main-body .frm-contact {
+}
+
+.main-body .lst-content {
+}
+
+.main-body .sell-off {
 }
