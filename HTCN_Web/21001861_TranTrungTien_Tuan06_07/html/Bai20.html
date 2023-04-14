@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 20</title>
+    <style>
+      .lst {
+        padding-top: 20px;
+      }
+
+      .lst td {
+        border: 1px solid #000;
+      }
+
+      .lst textarea {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="frm">
+        <form action="">
+          <table>
+            <tr>
+              <td><label for="">Ho ten:</label></td>
+              <td>
+                <input type="text" name="txtName" id="txtName" value="Tien" />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="">Lop:</label></td>
+              <td>
+                <select name="selector" id="selectorClass">
+                  <option value="DHKTPM17A">DHKTPM17A</option>
+                  <option value="DHKHMT17A">DHKTPM17A</option>
+                  <option value="DHCNTT17A">DHCNTT17A</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="">Mon hoc:</label></td>
+              <td>
+                <select name="selector" id="selectorCourse">
+                  <option value="He thong cong nghe web">
+                    He thong cong nghe web
+                  </option>
+                  <option value="Lap trinh huong doi tuong">
+                    Lap trinh huong doi tuong
+                  </option>
+                  <option value="Lap trinh huong su kien">
+                    Lap trinh huong su kie
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="">Loai:</label></td>
+              <td>
+                <input type="radio" name="loai" id="loai1" value="Ly thuyet" />
+                <label for="">Ly thuyet</label>
+                <input type="radio" name="loai" id="loai2" value="Thuc hanh" />
+                <label for="">Thuc hanh</label>
+              </td>
+            </tr>
+          </table>
+          <div class="btn">
+            <input type="button" value="Dang ky" onclick="addList()" />
+          </div>
+          <!--  -->
+          <div class="lst">
+            <table style="border: 1px solid #000">
+              <tr>
+                <td><h4>Ho ten</h4></td>
+                <td><h4>Lop</h4></td>
+                <td><h4>Mon hoc dang ky</h4></td>
+                <td><h4>Loai</h4></td>
+              </tr>
+              <tr>
+                <td>
+                  <textarea
+                    name="lstSt"
+                    id="hoTen"
+                    cols="30"
+                    rows="5"
+                    readonly
+                  ></textarea>
+                </td>
+                <td>
+                  <textarea
+                    name="lstSt"
+                    id="lop"
+                    cols="20"
+                    rows="5"
+                    readonly
+                  ></textarea>
+                </td>
+                <td>
+                  <textarea
+                    name="lstSt"
+                    id="monHoc"
+                    cols="50"
+                    rows="5"
+                    readonly
+                  ></textarea>
+                </td>
+                <td>
+                  <textarea
+                    name="lstSt"
+                    id="loai"
+                    cols="20"
+                    rows="5"
+                    readonly
+                  ></textarea>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+      <!-- end form -->
+    </div>
+    <!--  -->
+    <script src="../js/Bai20.js"></script>
+  </body>
+</html>

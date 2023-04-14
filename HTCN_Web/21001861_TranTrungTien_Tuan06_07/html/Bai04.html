@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 4</title>
+  </head>
+  <body>
+    <script>
+      let date = new Date();
+      let birth, year;
+      year = date.getFullYear();
+      do {
+        birth = Number(prompt("Nhap vao nam sinh: ", ""));
+      } while (parseInt(birth) > year || parseInt(birth) < 0);
+      let age = year - birth;
+      document.write("Tuoi hien tai: " + age);
+    </script>
+  </body>
+</html>

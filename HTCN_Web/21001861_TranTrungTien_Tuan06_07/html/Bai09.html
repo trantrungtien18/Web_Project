@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 09</title>
+  </head>
+  <body>
+    <div class="convertFtoC">
+      <h3>Convert F to C</h3>
+      <input type="text" name="txtF" id="fDeg" />
+      <input type="button" value="Chuyen doi" onclick="trans()" />
+      <input type="text" name="" id="cDeg" readonly />
+    </div>
+    <div class="multiTable">
+      <h3>In bang cuu chuong tu 1 - 12</h3>
+      <input type="button" value="print" onclick="printMultiTable()" />
+      <div id="print"></div>
+    </div>
+    <script>
+      function trans() {
+        let f = document.getElementById("fDeg").value;
+        let c = eval(((f - 32) * 5) / 9);
+        document.getElementById("fDeg").value = "";
+        document.getElementById("cDeg").value = c;
+      }
+      function printMultiTable() {
+        for (i = 1; i < 13; i++) {
+          for (j = 1; j < 11; j++) {
+            let str = i + " * " + j + " = " + eval(i * j) + "\n";
+            document.write(str);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

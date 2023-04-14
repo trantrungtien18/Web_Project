@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 22</title>
+    <style>
+      table {
+        padding-left: 50px;
+      }
+      .btn {
+        padding-top: 10px;
+        padding-left: 150px;
+      }
+      span {
+        color: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="frm">
+        <form action="">
+          <h4>Thong tin dang ky:</h4>
+          <p>Ban phai khai bao day du cac muc co danh dau *.</p>
+          <table>
+            <tr>
+              <td><label for="">Ten day du:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="txtName"
+                  id="txtName"
+                  onblur="checkName()"
+                />
+              </td>
+              <td><span id="errName"></span></td>
+            </tr>
+            <tr>
+              <td><label for="">Ngay sinh:</label></td>
+              <td><input type="date" name="dob" id="dob" /></td>
+            </tr>
+            <tr>
+              <td><label for="">Gioi tinh:</label></td>
+              <td>
+                <select name="sex" id="sex">
+                  <option value="#">[Gioi tinh]</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </td>
+              <td><label for="">Noi song:</label></td>
+              <td>
+                <select name="address" id="address">
+                  <option value="#">[Chon tinh]</option>
+                  <option value="tp.Ho Chi Minh">tp.Ho Chi Minh</option>
+                  <option value="An Giang">An Giang</option>
+                  <option value="Dong Thap">Dong Thap</option>
+                  <option value="Ben Tre">Ben Tre</option>
+                  <option value="Long An">Long An</option>
+                  <option value="Tra Vinh">Tra Vinh</option>
+                  <option value="Vinh Long">Vinh Long</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <h4>Thong tin tai khoang:</h4>
+          <table>
+            <tr>
+              <td><label for="">Ten truy cap:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="txtAcc"
+                  id="txtAcc"
+                  required
+                  onblur="checkAcc()"
+                />
+              </td>
+              <td><span id="errAcc">(*)</span></td>
+            </tr>
+            <tr>
+              <td><label for="">Dia chi Email:</label></td>
+              <td>
+                <input type="email" name="txtMail" id="txtMail" required />
+              </td>
+              <td><span id="errMail">(*)</span></td>
+            </tr>
+            <tr>
+              <td><label for="">Mat khau:</label></td>
+              <td>
+                <input type="text" name="txtPass" id="txtPass" required />
+              </td>
+              <td><span id="errPass">(*)</span></td>
+            </tr>
+            <tr>
+              <td><label for="">Xac nhan mat khau:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="txtRePass"
+                  id="txtRePass"
+                  required
+                  onblur="checkRePass()"
+                />
+              </td>
+              <td><span id="errRePass">(*)</span></td>
+            </tr>
+          </table>
+          <div class="btn">
+            <input type="submit" value="Chap nhan" onclick="" />
+            <input type="reset" value="Xac lap lai" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="../js/Bai22.js"></script>
+  </body>
+</html>

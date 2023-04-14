@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 14</title>
+    <style>
+      #mess {
+        color: #f00;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <table>
+          <tr>
+            <td>
+              <input
+                type="text"
+                name="txtText"
+                id="txtText"
+                size="20"
+                placeholder="9999-9999-9999-9999"
+              />
+            </td>
+            <td>
+              <span id="mess">(*)</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="button" value="Check" onclick="checkText()" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <!-- Script -->
+    <script>
+      function checkText() {
+        let data = document.getElementById("txtText").value;
+        let pat = /^\d{4}\-\d{4}\-\d{4}\-\d{4}$/;
+        if (!pat.test(data)) {
+          document.getElementById("mess").innerHTML =
+            "(*) Sai dinh dang so credit card!!";
+          return false;
+        } else {
+          document.getElementById("mess").innerHTML = "(*)";
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

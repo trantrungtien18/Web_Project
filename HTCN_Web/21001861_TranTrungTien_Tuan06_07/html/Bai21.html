@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 21</title>
+    <style>
+      img {
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="comtainer">
+      <table class="tbl" border="1">
+        <tr>
+          <td>STT</td>
+          <td>Hinh anh</td>
+          <td>Gia</td>
+          <td>So luong</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <img src="../img/Bai21/hoaHong.jpg" alt="hoa-hong" />
+          </td>
+          <td>20000</td>
+          <td>
+            <input
+              type="text"
+              name="txtSoLuong"
+              id="txtSL1"
+              onblur="getTotal()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>
+            <img src="../img/Bai21/hoaTrang.jpg" alt="hoa-trang" />
+          </td>
+          <td>40000</td>
+          <td>
+            <input
+              type="text"
+              name="txtSoLuong"
+              id="txtSL2"
+              onblur="getTotal()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>
+            <img src="../img/Bai21/hoaVang.jpg" alt="hoa-vang" />
+          </td>
+          <td>30000</td>
+          <td>
+            <input
+              type="text"
+              name="txtSoLuong"
+              id="txtSL3"
+              onblur="getTotal()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>
+            <img src="../img/Bai21/hoaXam.jpg" alt="hoa-xam" />
+          </td>
+          <td>50000</td>
+          <td>
+            <input
+              type="text"
+              name="txtSoLuong"
+              id="txtSL4"
+              onblur="getTotal()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>
+            <img src="../img/Bai21/nheiuMau.jpg" alt="hoa-nhieu-mau" />
+          </td>
+          <td>90000</td>
+          <td>
+            <input
+              type="text"
+              name="txtSoLuong"
+              id="txtSL5"
+              onblur="getTotal()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Tong thanh tien</td>
+          <td><div id="result"></div></td>
+        </tr>
+      </table>
+    </div>
+    <script src="../js/Bai21.js"></script>
+  </body>
+</html>

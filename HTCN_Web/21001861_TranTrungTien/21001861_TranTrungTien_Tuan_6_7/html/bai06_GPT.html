@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 06 GPT</title>
+    <style>
+      /* CSS styles for calculator */
+      #calculator {
+        width: 255px;
+        margin: auto;
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      input[type="button"] {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        margin: 5px;
+        background-color: #eee;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="text"] {
+        width: 96%;
+        height: 50px;
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calculator">
+      <input type="text" id="result" readonly />
+      <input type="button" value="1" onclick="appendValue('1')" />
+      <input type="button" value="2" onclick="appendValue('2')" />
+      <input type="button" value="3" onclick="appendValue('3')" />
+      <input type="button" value="+" onclick="appendValue('+')" />
+      <br />
+      <input type="button" value="4" onclick="appendValue('4')" />
+      <input type="button" value="5" onclick="appendValue('5')" />
+      <input type="button" value="6" onclick="appendValue('6')" />
+      <input type="button" value="-" onclick="appendValue('-')" />
+      <br />
+      <input type="button" value="7" onclick="appendValue('7')" />
+      <input type="button" value="8" onclick="appendValue('8')" />
+      <input type="button" value="9" onclick="appendValue('9')" />
+      <input type="button" value="*" onclick="appendValue('*')" />
+      <br />
+      <input type="button" value="0" onclick="appendValue('0')" />
+      <input type="button" value="." onclick="appendValue('.')" />
+      <input type="button" value="/" onclick="appendValue('/')" />
+      <input type="button" value="=" onclick="calculate()" />
+      <br />
+      <input type="button" value="C" onclick="clearValue()" />
+    </div>
+    <script>
+      function appendValue(val) {
+        document.getElementById("result").value += val;
+      }
+
+      function clearValue() {
+        document.getElementById("result").value = "";
+      }
+
+      function calculate() {
+        var expression = document.getElementById("result").value;
+        var result = eval(expression);
+        document.getElementById("result").value = result;
+      }
+    </script>
+  </body>
+</html>
+
+<!-- <div class="calculator">
+    <input type="text" class="screen" disabled />
+    <div class="buttons">
+      <button class="num" value="7">7</button>
+      <button class="num" value="8">8</button>
+      <button class="num" value="9">9</button>
+      <button class="operator" value="+">+</button>
+      <button class="num" value="4">4</button>
+      <button class="num" value="5">5</button>
+      <button class="num" value="6">6</button>
+      <button class="operator" value="-">-</button>
+      <button class="num" value="1">1</button>
+      <button class="num" value="2">2</button>
+      <button class="num" value="3">3</button>
+      <button class="operator" value="*">*</button>
+      <button class="num" value="0">0</button>
+      <button class="num" value=".">.</button>
+      <button class="clear">C</button>
+      <button class="operator" value="/">/</button>
+      <button class="equals">=</button>
+    </div>
+  </div> -->

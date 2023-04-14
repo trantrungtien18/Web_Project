@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 08</title>
+  </head>
+  <body>
+    <div id="clock"></div>
+    <script>
+      function clockWork() {
+        let date = new Date();
+        let dayInWeek = date.getDay();
+        let dayInMonth = date.getDate();
+        let month = date.getMonth();
+        let year = date.getFullYear();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
+        let days = [
+          "Chu nhat",
+          "Thu hai",
+          "Thu ba",
+          "Thu tu",
+          "Thu nam",
+          "Thu sau",
+          "Thu bay",
+        ];
+        let setAM_PM;
+        if (dayInMonth < 10) {
+          dayInMonth = "0" + dayInMonth;
+        }
+        if (month < 10) {
+          month = "0" + month;
+        }
+        if (hour < 10) {
+          hour = "0" + hour;
+        }
+
+        if (hour > 12) {
+          hour -= 12;
+          setAM_PM = "PM";
+        } else {
+          setAM_PM = "AM";
+        }
+
+        if (minute < 10) {
+          minute = "0" + minute;
+        }
+        if (second < 10) {
+          second = "0" + second;
+        }
+
+        document.getElementById("clock").innerHTML =
+          days[dayInWeek] +
+          ", Ngay " +
+          dayInMonth +
+          "/" +
+          month +
+          "/" +
+          year +
+          " Bay gio la [" +
+          hour +
+          ":" +
+          minute +
+          ":" +
+          second +
+          "] " +
+          setAM_PM;
+        setTimeout("clockWork()", 10); // cho chay lai ham clockWork trong vong 1 giay
+      }
+      clockWork();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 6</title>
+    <style>
+      .main {
+        width: 170px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid #0ba;
+      }
+
+      .main .text {
+        margin: 10px;
+      }
+
+      .text #result {
+        width: 95%;
+        height: 30px;
+        text-align: right;
+      }
+
+      .main input[type="button"] {
+        text-align: center;
+        padding: 10px;
+        width: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="text">
+        <input type="text" name="" id="result" readonly />
+      </div>
+      <table>
+        <tr>
+          <td colspan="2">
+            <input
+              type="button"
+              value="C"
+              style="width: 65px"
+              onclick="clearValue()"
+            />
+          </td>
+          <td><input type="button" value="%" onclick="getValue('%')" /></td>
+          <td><input type="button" value="/" onclick="getValue('/')" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="7" onclick="getValue('7')" /></td>
+          <td><input type="button" value="8" onclick="getValue('8')" /></td>
+          <td><input type="button" value="9" onclick="getValue('9')" /></td>
+          <td><input type="button" value="*" onclick="getValue('*')" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="4" onclick="getValue('4')" /></td>
+          <td><input type="button" value="5" onclick="getValue('5')" /></td>
+          <td><input type="button" value="6" onclick="getValue('6')" /></td>
+          <td><input type="button" value="-" onclick="getValue('-')" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="1" onclick="getValue('1')" /></td>
+          <td><input type="button" value="2" onclick="getValue('2')" /></td>
+          <td><input type="button" value="3" onclick="getValue('3')" /></td>
+          <td><input type="button" value="+" onclick="getValue('+')" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="." onclick="getValue('.')" /></td>
+          <td><input type="button" value="0" onclick="getValue('0')" /></td>
+          <td colspan="2">
+            <input
+              type="button"
+              value="="
+              onclick="calculate()"
+              style="width: 62px"
+            />
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      function getValue(val) {
+        document.getElementById("result").value += val;
+      }
+      function clearValue() {
+        document.getElementById("result").value = "";
+      }
+      function calculate() {
+        let element = document.getElementById("result").value;
+        let rs = eval(element);
+        document.getElementById("result").value = rs;
+      }
+    </script>
+  </body>
+</html>
+<!-- 
+.main .text {
+  width: 90%;
+  height: 50px;
+  padding: 10px;
+}
+
+.text #result {
+  margin: 10px;
+  height: 50px;
+  width: 90%;
+  background-color: #ccc;
+} -->

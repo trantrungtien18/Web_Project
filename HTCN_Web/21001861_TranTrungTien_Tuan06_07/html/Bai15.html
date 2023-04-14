@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 15</title>
+    <style>
+      #mess {
+        color: #f00;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <table>
+          <tr>
+            <td>
+              <input type="text" name="txtText" id="txtText" />
+            </td>
+            <td>
+              <span id="mess">(*)</span>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="button" value="Check" onclick="checkText()" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <!-- Script -->
+    <script>
+      function checkText() {
+        let data = document.getElementById("txtText").value;
+        let pat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!pat.test(data)) {
+          document.getElementById("mess").innerHTML = "(*) Sai cu phap email!!";
+          return false;
+        } else {
+          document.getElementById("mess").innerHTML = "(*)";
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

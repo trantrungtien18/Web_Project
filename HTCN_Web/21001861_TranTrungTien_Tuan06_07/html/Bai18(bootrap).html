@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../extendedLib/bootstrap-5.3.0-alpha2-dist/css/bootstrap.min.css"
+    />
+    <script src="../extendedLib/jquery.js"></script>
+    <script src="../extendedLib/bootstrap-5.3.0-alpha2-dist/js/bootstrap.js"></script>
+    <title>Bai 18 (Bootstrap)</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-5">
+        <div class="header pb-3">
+          <h1 class="pb-2">Dang ky</h1>
+          <h4>Mien phi va se luon nhu vay.</h4>
+        </div>
+        <div class="frm form">
+          <form action="">
+            <table class="table">
+              <tr>
+                <td>
+                  <input
+                    type="text"
+                    name="txtHo"
+                    id="txtHo"
+                    class="form-control"
+                    placeholder="Ho"
+                    onblur="checkName()"
+                    required
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="txtName"
+                    id="txtName"
+                    class="form-control"
+                    placeholder="Ten"
+                    onblur="checkName()"
+                    required
+                  />
+                </td>
+                <td><span class="er position-absolute" id="erName"></span></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input
+                    type="text"
+                    name="txtMail"
+                    id="txtMail"
+                    class="form-control"
+                    size="46"
+                    placeholder="Email dang nhap"
+                    onblur="checkMail()"
+                    required
+                  />
+                </td>
+                <td><span class="er position-absolute" id="erMail"></span></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input
+                    type="text"
+                    name="txtReMail"
+                    id="txtReMail"
+                    class="form-control"
+                    size="46"
+                    placeholder="Nhap lai Email"
+                    onblur="checkRMail()"
+                    required
+                  />
+                </td>
+                <td><span class="er position-absolute" id="erRMail"></span></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input
+                    type="text"
+                    name="txtPass"
+                    id="txtPass"
+                    class="form-control"
+                    placeholder="Mat khau"
+                    size="46"
+                    onblur="checkPass()"
+                    required
+                  />
+                </td>
+                <td><span class="er position-absolute" id="erPass"></span></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input
+                    type="text"
+                    name="txtYob"
+                    id="txtYob"
+                    class="form-control"
+                    placeholder="Nam sinh"
+                    size="46"
+                    onblur="checkYob()"
+                    required
+                  />
+                </td>
+                <td><span class="er position-absolute" id="erY"></span></td>
+              </tr>
+            </table>
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-success"
+                onclick="register()"
+              >
+                Dang ky
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="tb mt-5 col-7">
+        <table class="table table-bordered" id="tbl">
+          <tr>
+            <th>STT</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Nam sinh</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="../js/Bai18.js"></script>
+  </body>
+</html>

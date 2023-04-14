@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../extendedLib/bootstrap-5.3.0-alpha2-dist/css/bootstrap.min.css"
+    />
+    <script src="../extendedLib/jquery.js"></script>
+    <script src="../extendedLib/bootstrap-5.3.0-alpha2-dist/js/bootstrap.js"></script>
+    <title>Bai 17 Bootstrap</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="col-5">
+        <div class="header pb-3 pt-3 text-center">
+          <h2>DANG KY TAI KHOANG</h2>
+        </div>
+        <div class="frm">
+          <form action="">
+            <table class="table">
+              <tr>
+                <td>
+                  <label class="form-label" for="">Ten dang nhap:</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="txtAccName"
+                    id="txtAccName"
+                    class="form-control"
+                    placeholder="Nhap ten dang nhap"
+                    size="25"
+                    required
+                    onblur="checkAccName()"
+                  />
+                </td>
+                <td>
+                  <span class="err position-absolute" id="errAccName">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td><label class="form-label" for="">Mat khau:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="txtPass"
+                    id="txtPass"
+                    class="form-control"
+                    placeholder="Nhap mat khau"
+                    size="25"
+                    required
+                    onblur="checkPass()"
+                  />
+                </td>
+                <td>
+                  <span class="err position-absolute" id="errPass">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="form-label" for="">Nhap lai mat khau:</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="txtRePass"
+                    id="txtRePass"
+                    class="form-control"
+                    placeholder="Nhap lai mat khau"
+                    size="25"
+                    required
+                    onblur="checkRePass()"
+                  />
+                </td>
+                <td>
+                  <span class="err position-absolute" id="errRePass">*</span>
+                </td>
+              </tr>
+            </table>
+            <div class="scdHeader pb-2 pt-2 text-center">
+              <h4>THONG TIN CA NHAN</h4>
+            </div>
+            <table class="table">
+              <tr>
+                <td><label class="form-label" for="">Ho va ten:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="txtName"
+                    id="txtName"
+                    class="form-control"
+                    placeholder="Nhap vao ho va ten (bat buoc)"
+                    size="30"
+                    required
+                    onblur="checkName()"
+                  />
+                </td>
+                <td>
+                  <span class="err position-absolute" id="errName">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td><label class="form-label" for="">Ngay sinh:</label></td>
+                <td>
+                  <input type="date" name="dob" id="dob" class="form-control" />
+                </td>
+              </tr>
+              <tr>
+                <div class="form-check">
+                  <td><label class="form-label" for="">Gioi tinh:</label></td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="sex"
+                      id="sex1"
+                      class="form-check-input"
+                      value="Nam"
+                    />
+                    <label class="form-check-label" for=""> Nam</label>
+                    <input
+                      type="radio"
+                      name="sex"
+                      id="sex2"
+                      class="form-check-input"
+                      value="Nu"
+                    />
+                    <label class="form-check-label" for="">Nu</label>
+                  </td>
+                </div>
+              </tr>
+              <tr>
+                <td><label class="form-label" for="">Dia chi:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="txtAddress"
+                    id="txtAddress"
+                    class="form-control"
+                    placeholder="Nhap dia chi"
+                    size="30"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label class="form-label" for="">Dien thoai:</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="txtNum"
+                    id="txtNum"
+                    class="form-control"
+                    placeholder="Nhap vao so dien thoai (9-10 so)"
+                    size="30"
+                    onblur="checkPhoneNum()"
+                  />
+                </td>
+                <td>
+                  <span class="err position-absolute" id="errNum">*</span>
+                </td>
+              </tr>
+              <tr>
+                <td><label class="form-label" for="">Email</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="txtMail"
+                    id="txtMail"
+                    class="form-control"
+                    placeholder="Nhap vao email (ten@tencongty.com)"
+                    size="30"
+                    onblur="checkMail()"
+                  />
+                </td>
+                <td>
+                  <span class="err position-absolute" id="errMail">*</span>
+                </td>
+              </tr>
+            </table>
+            <div class="mb-3 text-center">
+              <input
+                type="button"
+                class="btn btn-dark"
+                value="Dang ky"
+                onclick="register()"
+              />
+              <input type="reset" class="btn btn-dark ms-2" value="Huy" />
+              <!-- <button type="submit" class="btn btn-dark">Dang ky</button> -->
+              <!-- <button type="submit" class="btn btn-dark ms-2">Huy</button> -->
+            </div>
+          </form>
+          <div class="lst col-9">
+            <table id="tbl" class="table table-bordered">
+              <tr>
+                <th>STT</th>
+                <th>Ho ten</th>
+                <th>Ngay sinh</th>
+                <th>Gioi tinh</th>
+                <th>Dia chi</th>
+                <th>Dien thoai</th>
+                <th>Email</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/Bai17.js"></script>
+  </body>
+</html>

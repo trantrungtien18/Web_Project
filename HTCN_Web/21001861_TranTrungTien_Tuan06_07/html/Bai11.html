@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 11</title>
+</head>
+
+<body>
+    <div class="printArea">
+        <table>
+            <tr>
+                <td><label for="">Print message:</label></td>
+                <td>
+                    <input type="text" name="txtText" id="txtText" size="50" readonly />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let userAge = prompt("Input your age:");
+        if (parseInt(userAge) == 0) {
+            document.getElementById("txtText").value = "So you are a baby!";
+            // alert("So you are a baby!");
+        } else if ((parseInt(userAge) < 0) | (parseInt(userAge) > 200)) {
+            document.getElementById("txtText").value =
+                "I think you lying about your age!!";
+            // alert("I think you lying about your age!!");
+        } else {
+            document.getElementById("txtText").value = "That's a good age!";
+            // alert("That's a good age!");
+        }
+    </script>
+</body>
+
+</html>

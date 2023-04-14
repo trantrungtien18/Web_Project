@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 16</title>
+    <style>
+      .mess {
+        color: #f00;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="checkID">
+        <form action="">
+          <table>
+            <tr>
+              <label for="">Check ID address</label>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  name="txtText"
+                  id="id"
+                  placeholder="192.168.1.1"
+                />
+              </td>
+              <td>
+                <span class="mess" id="messID">(*)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="button" value="Check" onclick="checkId()" />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <br />
+      <!-- end checkID -->
+      <div class="checkURL">
+        <form action="">
+          <table>
+            <tr>
+              <label for="">Check URL address</label>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  name="txtText"
+                  id="url"
+                  placeholder="https://sv.iuh.edu.vn/"
+                  size="30"
+                />
+              </td>
+              <td>
+                <span class="mess" id="messURL">(*)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="button" value="Check" onclick="checkUrl()" />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <!-- end checkURL -->
+      <!-- Scrip -->
+      <script>
+        function checkId() {
+          let dataId = document.getElementById("id").value;
+          let patId = /[1-9]{1,3}\.[1-9]{1,3}\.[1-9]{1,3}\.[1-9]{1,3}/;
+          if (!patId.test(dataId)) {
+            document.getElementById("messID").innerHTML =
+              "(*) Sai cu phap ID address!!";
+            return false;
+          } else {
+            document.getElementById("messID").innerHTML = "(*)";
+            return true;
+          }
+        }
+
+        function checkUrl() {
+          let dataUrl = document.getElementById("url").value;
+          let patUrl = /^https:\/{2}(\w{2,3}\.)+\w{2,3}$/;
+          if (!patUrl.test(dataUrl)) {
+            document.getElementById("messURL").innerHTML =
+              "(*) Sai cu phap URL!!";
+            return false;
+          } else {
+            document.getElementById("messURL").innerHTML = "(*)";
+            return true;
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>

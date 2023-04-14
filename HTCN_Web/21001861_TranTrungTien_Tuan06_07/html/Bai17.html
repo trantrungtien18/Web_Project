@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 17</title>
+    <style>
+      .header {
+        padding-left: 45px;
+      }
+      .scdHeader {
+        padding-left: 80px;
+      }
+
+      .container .frm table {
+        text-align: left;
+      }
+
+      .frm .btn {
+        padding-top: 10px;
+      }
+
+      .err {
+        color: #f00;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>DANG KY TAI KHOANG</h2>
+      </div>
+      <div class="frm">
+        <form action="">
+          <table>
+            <tr>
+              <td>
+                <label for="">Ten dang nhap:</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="txtAccName"
+                  id="txtAccName"
+                  placeholder="Nhap ten dang nhap"
+                  size="25"
+                  required
+                  onblur="checkAccName()"
+                />
+              </td>
+              <td><span class="err" id="errAccName">*</span></td>
+            </tr>
+            <tr>
+              <td><label for="">Mat khau:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="txtPass"
+                  id="txtPass"
+                  placeholder="Nhap mat khau"
+                  size="25"
+                  required
+                  onblur="checkPass()"
+                />
+              </td>
+              <td><span class="err" id="errPass">*</span></td>
+            </tr>
+            <tr>
+              <td><label for="">Nhap lai mat khau:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="txtRePass"
+                  id="txtRePass"
+                  placeholder="Nhap lai mat khau"
+                  size="25"
+                  required
+                  onblur="checkRePass()"
+                />
+              </td>
+              <td><span class="err" id="errRePass">*</span></td>
+            </tr>
+          </table>
+        </form>
+        <div class="scdHeader">
+          <h4>THONG TIN CA NHAN</h4>
+        </div>
+        <form action="">
+          <table>
+            <tr>
+              <td><label for="">Ho va ten:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="txtName"
+                  id="txtName"
+                  placeholder="Nhap vao ho va ten (bat buoc)"
+                  size="30"
+                  required
+                  onblur="checkName()"
+                />
+              </td>
+              <td><span class="err" id="errName">*</span></td>
+            </tr>
+            <tr>
+              <td><label for="">Ngay sinh:</label></td>
+              <td><input type="date" name="dob" id="dob" /></td>
+            </tr>
+            <tr>
+              <td><label for="">Gioi tinh:</label></td>
+              <td>
+                <input type="radio" name="sex" id="sex" value="Nam" /><label
+                  for=""
+                  >Nam</label
+                >
+                <input type="radio" name="sex" id="sex" value="Nu" />
+                <label for="">Nu</label>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="">Dia chi:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="txtAddress"
+                  id="txtAddress"
+                  placeholder="Nhap dia chi"
+                  size="30"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="">Dien thoai:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="txtNum"
+                  id="txtNum"
+                  placeholder="Nhap vao so dien thoai (9-10 so)"
+                  size="30"
+                  onblur="checkPhoneNum()"
+                />
+              </td>
+              <td><span class="err" id="errNum">*</span></td>
+            </tr>
+            <tr>
+              <td><label for="">Email</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="txtMail"
+                  id="txtMail"
+                  placeholder="Nhap vao email (ten@tencongty.com)"
+                  size="30"
+                  onblur="checkMail()"
+                />
+              </td>
+              <td><span class="err" id="errMail">*</span></td>
+            </tr>
+          </table>
+          <div class="btn">
+            <input type="button" value="Dang ky" />
+            <input type="button" value="Huy" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--  -->
+    <script src="../js/Bai17.js"></script>
+  </body>
+</html>

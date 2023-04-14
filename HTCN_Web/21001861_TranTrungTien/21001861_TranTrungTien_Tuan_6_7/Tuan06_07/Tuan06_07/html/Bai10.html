@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 10</title>
+</head>
+
+<body>
+    <form action="">
+        <div class="printArea">
+            <label for=""><h4>Print</h4></label>
+            <input type="text" name="txtText" id="txtPrint" size="50" readonly />
+        </div>
+        <div class="inputArea">
+            <label for=""><h4>Input keyword</h4></label>
+            <textarea name="txtArea" id="inputKey" cols="50" rows="10" onkeyup="check()"></textarea>
+        </div>
+    </form>
+
+    <script>
+        let numOfKey = 0;
+
+        function check() {
+            if (document.getElementById("inputKey").value.length > 50) {
+                alert("Vuot qua so luong ky tu!");
+            } else {
+                document.getElementById("txtPrint").value =
+                    document.getElementById("inputKey").value;
+            }
+            txtText.value = txtArea.value.length;
+        }
+    </script>
+</body>
+
+</html>

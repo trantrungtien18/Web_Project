@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 5</title>
+  </head>
+  <body>
+    <script>
+      let list = new Array(100);
+      let count = Number(prompt("Nhap so nhan vien: ", 1));
+      for (i = 0; i < count; i++) {
+        list[i] = prompt("Nhap ten: ", "");
+      }
+      document.write("Danh sach nhan vien: ");
+      for (i = 0; i < count; i++) {
+        document.write(list[i]);
+      }
+    </script>
+  </body>
+</html>

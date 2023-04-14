@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 12</title>
+    <style>
+      .wrapper {
+        width: 500px;
+        text-align: center;
+        border: 1px solid #000;
+      }
+
+      .wrapper .frm {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="" class="frm">
+        <div class="img">
+          <img
+            id="flowerImg"
+            src="../img/Bai12/hoa1.jpg"
+            alt="hoa1"
+            style="width: 90%"
+          />
+        </div>
+        <div class="btn" style="text-align: center">
+          <input type="button" value="Start" onclick="swapImg()" />
+          <input type="button" value="Stop" onclick="stopSwap()" />
+        </div>
+      </form>
+    </div>
+    <!-- Script -->
+    <script>
+      let imgSrc = [
+        "../img/Bai12/hoa1.jpg",
+        "../img/Bai12/hoa2.jpg",
+        "../img/Bai12/hoa3.jpg",
+        "../img/Bai12/hoa4.jpg",
+        "../img/Bai12/hoa5.jpg",
+      ];
+      let index = 0;
+      let timeOut;
+      function swapImg() {
+        document.getElementById("flowerImg").src = imgSrc[index];
+        index = (index + 1) % imgSrc.length;
+        timeOut = setTimeout("swapImg()", 3000);
+      }
+      function stopSwap() {
+        clearTimeout(timeOut);
+      }
+    </script>
+  </body>
+</html>

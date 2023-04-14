@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 18</title>
+    <style>
+      .er {
+        color: #f00;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Dang ky</h1>
+        <h4>Mien phi va se lun nhu vay.</h4>
+      </div>
+      <div class="frm">
+        <form action="">
+          <table>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  name="txtHo"
+                  id="txtHo"
+                  placeholder="Ho"
+                  onblur="checkName()"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="txtName"
+                  id="txtName"
+                  placeholder="Ten"
+                  onblur="checkName()"
+                />
+              </td>
+              <td><span class="er" id="erName"></span></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input
+                  type="text"
+                  name="txtMail"
+                  id="txtMail"
+                  size="46"
+                  placeholder="Email dang nhap"
+                  onblur="checkMail()"
+                />
+              </td>
+              <td><span class="er" id="erMail"></span></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input
+                  type="text"
+                  name="txtReMail"
+                  id="txtReMail"
+                  size="46"
+                  placeholder="Nhap lai Email"
+                  onblur="checkRMail()"
+                />
+              </td>
+              <td><span class="er" id="erRMail"></span></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input
+                  type="text"
+                  name="txtPass"
+                  id="txtPass"
+                  placeholder="Mat khau"
+                  size="46"
+                  onblur="checkPass()"
+                />
+              </td>
+              <td><span class="er" id="erPass"></span></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input
+                  type="text"
+                  name="txtYob"
+                  id="txtYob"
+                  placeholder="Nam sinh"
+                  size="46"
+                  onblur="checkYob()"
+                />
+              </td>
+              <td><span class="er" id="erY"></span></td>
+            </tr>
+          </table>
+          <div class="btn">
+            <input type="button" value="Dang ky" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--  -->
+    <script src="../js/Bai18.js"></script>
+  </body>
+</html>

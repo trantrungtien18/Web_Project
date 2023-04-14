@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 19</title>
+  </head>
+  <body>
+    <p id="text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore
+      fugiat, provident, aliquam itaque praesentium rem mollitia ducimus
+      voluptatibus illo est expedita reprehenderit aut perferendis enim numquam
+      eum quibusdam asperiores obcaecati?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil debitis
+      minima ex consectetur saepe odit quia quod quasi eius porro, voluptatum
+      reiciendis, aliquid rerum doloremque cum alias labore voluptas
+      exercitationem!
+    </p>
+    <script>
+      function set_background() {
+        docBody = document.getElementsByTagName("body")[0];
+        myBodyElement = docBody.getElementsByTagName("p");
+        myp1 = myBodyElement[0];
+        myp1.style.background = "rgb(255,0,0)";
+        myp2 = myBodyElement[1];
+        myp2.style.background = "rgb(255,255,0)";
+      }
+      set_background();
+    </script>
+  </body>
+</html>
