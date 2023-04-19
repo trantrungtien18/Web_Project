@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <style>
+        div{
+            margin: 20px;
+        }
+        #er{
+            color: red;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            let user1={
+                id:1,
+                name:'abc',
+                pass:'123'
+
+            };
+            let user2={
+                id:2,
+                name:'xyz',
+                pass:'123'
+
+            };
+            let lstuser=[user1,user2];
+
+            $("#btndn").click(function (e) {
+                // dung ten mat khau
+                let name, pass;
+                name=$("#txtname").val();
+                pass=$("#txtpass").val();
+                // lstuser.forEach(element => {
+                //     name=lstuser[i].name;
+                // });
+                if(name=="abc"&pass=="123")
+                {
+                    let window= open("dangnhapthanhcong.html");
+                    // luu bien 'ten'
+                    localStorage.setItem('ten', name);
+
+                }
+                $("#er").html("User name and Pass sai!!!");
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+    
+    <form action="">
+        <div>
+            <input type="text" placeholder="User Name" id="txtname">
+        </div>
+        <div>
+            <input type="text" placeholder="Password" id="txtpass">
+        </div>
+        <div>
+            <input type="button" value="Đăng nhập" id="btndn">
+            <input type="reset" value="Hủy">
+
+        </div>
+        <div id="er">
+            (*)
+        </div>
+    </form>
+
+</body>
+</html>
