@@ -4,10 +4,22 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'TT';
+    src: url('../assets/font/OldStandardTT-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Cookie';
+    src: url('../assets/font/Cookie-Regular.ttf');
+}
+
+
 /* common */
 
 html {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family: 'TT';
 }
 
 a {
@@ -16,6 +28,11 @@ a {
 
 ul {
     list-style: none;
+}
+
+p {
+    font-family: 'Cookie';
+    font-size: 25px;
 }
 
 .h-100 {
@@ -30,6 +47,7 @@ ul {
     padding-top: 150px;
     padding-bottom: 150px;
 }
+
 
 
 /* main */
@@ -166,14 +184,12 @@ ul {
 .fst-content .slogan {
     width: 50%;
     float: left;
-    color: #383838;
     text-align: left;
     padding: 0 30px;
 }
 
 .slogan .desc {
     padding-top: 25px;
-    color: #747474;
     text-align: justify;
 }
 
@@ -193,24 +209,68 @@ ul {
 
 .main-body .intro-menu {
     width: 100%;
-    background-color: #92b1f5;
+    background-color: #ffeece;
     text-align: center;
+}
+
+.intro-menu .desc {
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-menu .desc h1 {
+    color: #ff226b;
+    font-size: 50px;
+}
+
+.intro-menu .desc p {
+    padding-top: 30px;
+    width: 70%;
+}
+
+.intro-menu .more-btn {
+    border-bottom: 1px solid #8338ec;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+.intro-menu .more-btn a {
+    font-size: 20px;
+    color: #8338ec;
 }
 
 .intro-menu .lst ul {
     padding: 0 6px;
-    display: flex;
-    justify-content: space-around;
+}
+
+.lst li {
+    display: inline-block;
+    padding: 40px 90px;
+    border-radius: 10px;
+}
+
+.lst .element-1 {
+    background-image: url('../assets/img/home_page/itro/caro1.jpg');
+}
+
+.lst .element-2 {
+    background-image: url('../assets/img/home_page/itro/caro2.jpg');
+}
+
+.lst .element-3 {
+    background-image: url('../assets/img/home_page/itro/caro3.jpg');
 }
 
 .lst img {
     object-fit: cover;
     width: 260px;
-    height: 360px;
+    height: 260px;
     transition: all 0.75s;
     border-radius: 10px;
 }
-
 
 .main-body .frm-contact {}
 
