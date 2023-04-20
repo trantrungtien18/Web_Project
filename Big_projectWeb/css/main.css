@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 /* common */
 
 html {
@@ -20,7 +19,6 @@ ul {
 }
 
 .h-100 {
-    margin-top: 20px;
     height: 60px;
 }
 
@@ -40,32 +38,46 @@ ul {
     position: relative;
     width: 100%;
     height: 600px;
-    background-image: url("../assets/img/home_page/header/header.jpg");
+    background-image: url("../assets/img/home_page/header/header2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .header .fixed-box {
+    height: 200px;  
+    width: 100%;
     display: flex;
     justify-content: space-around;
+    transition: all .5s ease-in-out;
+}
+
+.fixed-box.sticky {
+    opacity: 0.9;
+    background-color: #ffdab9;
 }
 
 .header .logo {
     float: left;
     text-align: center;
-    width: 25%;
+    width: 20%;
     display: flex;
     justify-content: center;
 }
 
+.logo img {
+    width: 200px;
+}
+
 .header .nav {
-    width: 50%;
+    width: 60%;
+    float: left;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: #ffcad4;
     border-radius: 10px;
     margin-top: 60px;
+    box-shadow: 0 5px 5px #000;
 }
 
 .header .nav>ul>li {
@@ -113,8 +125,8 @@ ul {
 
 .header .cart {
     text-align: center;
-    float: left;
-    width: 25%;
+    float: right;
+    width: 20%;
     display: flex;
     justify-content: center;
     font-size: 30px;
@@ -139,6 +151,7 @@ ul {
 /* end header */
 
 .main-body {
+    background-color: rgba(255, 175, 204, 0.468);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -184,23 +197,20 @@ ul {
     text-align: center;
 }
 
-.intro-menu .lst li {
+.intro-menu .lst ul {
     padding: 0 6px;
-    display: inline-block;
+    display: flex;
+    justify-content: space-around;
 }
 
 .lst img {
     object-fit: cover;
-    width: 200px;
-    height: 350px;
+    width: 260px;
+    height: 360px;
     transition: all 0.75s;
     border-radius: 10px;
 }
 
-.lst li:hover img {
-    transform: translateY(-15px);
-    transition: all 0.75s;
-}
 
 .main-body .frm-contact {}
 

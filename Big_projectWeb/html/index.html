@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../assets/icon/themify-icons/themify-icons.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <title>Main Page</title>
 </head>
 
@@ -16,8 +18,8 @@
             <div class="fixed-box fixed-nav">
                 <div class="logo h-100">
                     <a href="#">
-                        <img src="../assets/img/Logo/Logo.png" alt="Logo_page
-                  " width="60%" />
+                        <img src="../assets/img/Logo/Sweety.png" alt="Logo_page
+                  " />
                     </a>
                 </div>
                 <div class="nav h-100">
@@ -56,14 +58,21 @@
                     <h1>Indulge in our heavenly baked treats, one bite at a time!</h1>
                     <div class="desc">
                         <p>
-                            Welcome to our website, where we invite you to indulge in our heavenly baked treats, one bite at a time! Our passion for baking is reflected in every item we create. From our freshly baked breads and pastries to our decadent cakes and desserts, we use
-                            only the finest ingredients to ensure every bite is a heavenly experience. Our commitment to quality and attention to detail sets us apart, and we take pride in bringing the warmth and comfort of home-baked goodness to your
-                            doorstep. So go ahead and indulge in our treats, savoring each bite and letting the flavors dance on your tongue. Thank you for choosing our bakery, we can't wait to share our love of baking with you!
+                            Welcome to our website, where we invite you to indulge in our heavenly baked treats, one
+                            bite at a time! Our passion for baking is reflected in every item we create. From our
+                            freshly baked breads and pastries to our decadent cakes and desserts, we use
+                            only the finest ingredients to ensure every bite is a heavenly experience. Our commitment to
+                            quality and attention to detail sets us apart, and we take pride in bringing the warmth and
+                            comfort of home-baked goodness to your
+                            doorstep. So go ahead and indulge in our treats, savoring each bite and letting the flavors
+                            dance on your tongue. Thank you for choosing our bakery, we can't wait to share our love of
+                            baking with you!
                         </p>
                     </div>
                 </div>
                 <div class="img-right">
-                    <img src="../assets/img/home_page/slogan-img/Essential_Baking_Ingredients_Every_Baker_Needs-1.jpg" alt="baking-ingredients" />
+                    <img src="../assets/img/home_page/slogan-img/Essential_Baking_Ingredients_Every_Baker_Needs-1.jpg"
+                        alt="baking-ingredients" />
                 </div>
             </div>
             <div class="intro-menu ptb-150">
@@ -84,16 +93,6 @@
                                 <img src="../assets/img/intro-menu/intro_product3.webp" alt="product-3">
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <img src="../assets/img/intro-menu/intro_product4.webp" alt="product-4">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="../assets/img/intro-menu/intro_product5.webp" alt="product-5">
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -104,6 +103,18 @@
         <!-- end main-body -->
         <div class="footer"></div>
     </div>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop()) {
+                    $(".fixed-box").addClass("sticky");
+                } else {
+                    $(".fixed-box").removeClass("sticky");
+                }
+            });
+        });
+    </script>
 </body>
+
 
 </html>
