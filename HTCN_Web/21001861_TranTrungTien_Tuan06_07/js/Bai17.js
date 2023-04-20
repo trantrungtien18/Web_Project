@@ -94,14 +94,14 @@ function register() {
   let dc = document.getElementById("txtAddress").value;
   let sdt = document.getElementById("txtNum").value;
   let ml = document.getElementById("txtMail").value;
-  if (checkAccName()) {
+  if (checkAccName(ten)) {
     if (checkPass()) {
       if (checkName()) {
         if (checkPhoneNum()) {
           if (checkMail()) {
             // let win = window.open('ketqua.html');
-            localStorage.setItem("name", ten);
-            let trnew =
+            // localStorage.setItem("name", ten);
+            let trNew =
               "<tr><td>" +
               stt +
               "</td><td>" +
@@ -117,7 +117,7 @@ function register() {
               "</td><td>" +
               ml +
               "</td></tr>";
-            document.getElementById("tbl").innerHTML += trnew;
+            document.getElementById("tbl").innerHTML += trNew;
             stt++;
           }
         }
