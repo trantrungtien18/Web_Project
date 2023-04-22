@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 08</title>
+    <link rel="stylesheet" href="../../extendedLib/css/bootstrap.min.css">
+    <script src="../../extendedLib/jquery.js"></script>
+    <script src="../../extendedLib/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <form action="" class="form">
+                    <table class="table">
+                        <tr>
+                            <td><label for="">Numeric Only:</label></td>
+                            <td><input type="text" name="txtNum" id="txtNum" class="form-control"></td>
+                            <td><span id="err1"></span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">No special characters:</label></td>
+                            <td><input type="text" name="txtNSChar" id="txtNSChar" class="form-control"></td>
+                            <td><span id="err2"></span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Max 8:</label></td>
+                            <td><input type="text" name="txtMax8" id="txtMax8" class="form-control"></td>
+                            <td><span id="err3"></span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">US Phone Number:</label></td>
+                            <td><input type="text" name="txtUSPhoneNum" id="txtUSPhoneNum" class="form-control"></td>
+                            <td><span id="err4"></span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Date:</label></td>
+                            <td><input type="text" name="txtDate" id="txtDate" class="form-control"></td>
+                            <td><span id="err5"></span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Fake Text:</label></td>
+                            <td><input type="text" name="txtFText" id="txtFText" class="form-control"></td>
+                            <td><span id="err6"></span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Email:</label></td>
+                            <td><input type="text" name="txtMail" id="txtMail" class="form-control"></td>
+                            <td><span id="err7"></span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">No Free Email:</label></td>
+                            <td><input type="text" name="txtNFMail" id="txtNFMail" class="form-control"></td>
+                            <td><span id="err8"></span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Visa Card:</label></td>
+                            <td><input type="text" name="txtCard" id="txtCard" class="form-control"></td>
+                            <td><span id="err9"></span></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#txtNum").on("input", function () {
+                let num = $(this).val()
+                let pat = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/
+                if (!pat.test(num)) {
+                    $("#err1").html("* Numeric only!!!")
+                }
+                else {
+                    $("#err1").html("")
+                }
+            })
+
+            $("#txtNSChar").on("input", function () {
+                let string = $(this).val()
+                let pat = /^\s*[A-Za-z0-9,\s]+\s*$/
+                if (!pat.test(string)) {
+                    $("#err2").html("* No Special Character!!!")
+                }
+                else {
+                    $("#err2").html("")
+                }
+            })
+
+            $("#txtMax8").on("input", function () {
+                let string = $(this).val()
+                let pat = /^([a-zA-Z0-9]{0,8})$/
+                if (!pat.test(string)) {
+                    $("#err3").html("* Only 8 Character!!!")
+                }
+                else {
+                    $("#err3").html("")
+                }
+            })
+
+            $("#txtUSPhoneNum").on("input", function () {
+                let phoneNum = $(this).val()
+                let pat = /^[2-9]\d{2}-\d{3}-\d{4}$/
+                if (!pat.test(phoneNum)) {
+                    $("err4").html("* Invalid format!!!")
+                }
+                else {
+                    $("err4").html("")
+                }
+            })
+
+            $("#txtDate").on("input", function () {
+                let date = $(this).val()
+                let pat = /^[0,1]?\d{1}V(([0-2]?\d{1})([3][0,1]{1}))V(([1]{1}[9]{1}[9]{1}\d{1})|([2-9]{1}\d{3}))$/
+                if (!pat.test(date)) {
+                    $("#err5").html("* Invalid format!!!")
+                }
+                else {
+                    $("#err5").html("")
+                }
+            })
+
+            $("#txtFText").on("input", function () {
+                let fakeText = $(this).val()
+                let pat = /^(.)\1{2,}$/
+                if (!pat.test(fakeText)) {
+                    $("#err6").html("* It not a Fake Text!!!")
+                }
+                else {
+                    $("#err6").html("")
+                }
+            })
+
+            $("#txtMail").on("input", function () {
+                let mail = $(this).val()
+                let pat = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/
+                if (!pat.test(mail)) {
+                    $("#err7").html("* Invalid format!!!")
+                }
+                else {
+                    $("#err7").html("")
+                }
+            })
+
+            $("#txtNFMail").on("input", function () {
+                let mail = $(this).val()
+                let pat = /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)([\w-]+\.)+[\w-]{2,4})?$/
+                if (!pat.test(mail)) {
+                    $("#err8").html("* This is No Free Mail!!!")
+                }
+                else {
+                    $("#err8").html("")
+                }
+            })
+
+            $("#txtCard").on("input", function () {
+                let card = $(this).val()
+                let pat = /^4[0-9]{12}(?:[0-9]{3})?$/
+                if (!pat.test(card)) {
+                    $("#err9").html("* Invalid Format!!!")
+                }
+                else {
+                    $("#err9").html("")
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

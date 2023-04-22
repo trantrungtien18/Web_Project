@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 07</title>
+    <link rel="stylesheet" href="../../extendedLib/css/bootstrap.min.css">
+    <script src="../../extendedLib/jquery.js"></script>
+    <script src="../../extendedLib/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Dang ky</h1>
+        </div>
+        <div class="row pt-3">
+            <form action="" class="frm">
+                <table class="table">
+                    <tr>
+                        <td><label class="form-label" for="">Ten dang nhap</label></td>
+                        <td><input class="form-control" type="text" name="txtTDN" id="txtTDN"></td>
+                        <td><span id="errTDN"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="">Mat khau</label></td>
+                        <td><input class="form-control" type="text" name="txtMK" id="txtMK"></td>
+                        <td><span id="errMK"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="">Nhap lai mat khau</label></td>
+                        <td><input class="form-control" type="text" name="txtNLMK" id="txtNLMK"></td>
+                        <td><span id="errNLMK"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="">Email</label></td>
+                        <td><input class="form-control" type="text" name="txtMail" id="txtMail"></td>
+                        <td><span id="errMail"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="">Dien thoai</label></td>
+                        <td><input class="form-control" type="text" name="txtPhoneNum" id="txtPhoneNum"></td>
+                        <td><span id="errDT"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label" for="">Dia chi</label></td>
+                        <td><input class="form-control" type="text" name="txtDC" id="txtDC"></td>
+                        <td><span id="errDC"></span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="button" class="btn btn-success">Dang ky</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#txtTDN").on("input", function () {
+                let accName = $(this).val()
+                let pat = /^[A-Za-z0-9]{4,}$/
+                if (!pat.test(accName)) {
+                    $("#errTDN").html("(*) Account name must greater than 4 word!")
+                }
+                else {
+                    $("#errTDN").html("")
+                }
+            })
+
+            $("#txtMK").on("input", function () {
+                let pass = $(this).val()
+                let pat = /^[A-Za-z0-9]+$/
+                if (!pat.test(pass)) {
+                    $("#errMK").html("(*) Password must not empty!")
+                }
+                else {
+                    $("#errMK").html("")
+                }
+            })
+
+            $("#txtNLMK").on("input", function () {
+                let rePass = $(this).val()
+                let pass = $("#txtMK").val()
+                if (rePass != pass) {
+                    $("#errNLMK").html("(*) Must equal than Password!")
+                }
+                else {
+                    $("#errNLMK").html("")
+                }
+            })
+
+            $("#txtMail").on("input", function () {
+                let mail = $(this).val()
+                let pat = /^\w+(\.\w+)*@\w+(\.-\w+)*(\.\w{2,3})+$/
+                if (!pat.test(mail)) {
+                    $("#errMail").html("(*) Email invalid format and must not empty!")
+                }
+                else {
+                    $("#errMail").html("")
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
