@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 10</title>
+    <link rel="stylesheet" href="../../extendedLib/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="../../extendedLib/js/bootstrap.min.js"></script>
+
+    <style>
+        div.er {
+            background-color: #eee;
+            border: 1px solid red;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        div.er ol li {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        div.er {
+            display: none;
+        }
+
+        .er label.error {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row er">
+            <h4>There are serious errors in your form submission, please see below for details.</h4>
+            <ol>
+                <li>
+                    <label for="email" class="error">Please enter your email address</label>
+                </li>
+                <li>
+                    <label for="phone" class="error">Please enter your phone <b>number</b> (between 2
+                        and 8 characters)</label>
+                </li>
+                <li>
+                    <label for="address" class="error">Please enter your address (at least 3
+                        characters)</label>
+                </li>
+                <li>
+                    <label for="avatar" class="error">Please select an image (png, jpg, jpeg,
+                        gif)</label>
+                </li>
+                <li>
+                    <label for="cv" class="error">Please select a document (doc, docx, txt,
+                        pdf)</label>
+                </li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="frm col-8 col-md-8">
+                <form action="" class="form" id="myForm">
+                    <fieldset>
+                        <legend>Validating a complete form</legend>
+                        <table class="table">
+                            <tr>
+                                <td><label for="email">Email</label></td>
+                                <td><input class="form-control" type="email" name="txtMail" id="txtMail" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="agree">Favorite Color</label></td>
+                                <td>
+                                    <select name="color" id="color" title="Please select your favorite color!" required>
+                                        <option value=""></option>
+                                        <option value="Red">Red</option>
+                                        <option value="Blue">Blue</option>
+                                        <option value="Yellow">Yellow</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="phone">Phone</label></td>
+                                <td><input class="form-control" type="text" name="phoneNum" id="phoneNum" required
+                                        rangelength="[2,8]">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="address">Address</label></td>
+                                <td><input class="form-control" type="text" name="txtAddress" id="txtAddress" required
+                                        minlength="3"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="avatar">Avatar</label></td>
+                                <td><input type="file" name="fileAvt" id="fileAvt" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="agree">Please agree to our policy</label></td>
+                                <td><input class="form-check" type="checkbox" class="checkbox" name="agree" id="agree"
+                                        title="Please agree to our
+                                    policy!" required></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="" colspan="2">
+                                    <input type="submit" name="btnSubmit" id="btnSubmit" class="btn btn-success">
+                                    <input type="submit" name="btnCancel" id="btnCancel" value="Cancel"
+                                        class="btn btn-warning">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $().ready(function () {
+            let err = $("div.er")
+            let validator = $("#myForm").validate({
+                errorContainer: err,
+                errorLabelContainer: $('ol', err),
+                wrapper: 'li'
+            })
+            $("#btnCancel").click(function () {
+                validator.resetForm()
+            })
+        })
+    </script>
+</body>
+
+</html>

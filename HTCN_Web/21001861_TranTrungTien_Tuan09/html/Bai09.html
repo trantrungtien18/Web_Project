@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 09</title>
+    <link rel="stylesheet" href="../../extendedLib/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="../../extendedLib/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="frm col-8 col-md-8">
+                <form method="get" class="cmxform" id="form1" action="" class="form">
+                    <fieldset>
+                        <legend>Login form</legend>
+                        <p>
+                            <label class="px-3" for="">Username</label>
+                            <input class="" type="text" name="user" id="txtName"
+                                title="Please enter your username (at least 3 characters)" required minlength="3">
+                        </p>
+                        <p>
+                            <label class="px-3" for="">Password</label>
+                            <input class="" type="password" name="txtPass" id="txtPass" maxlength="12" title="Please enter your
+                                password, between 5 and 12 characters" required minlength="5">
+                        </p>
+                        <div class="error"></div>
+                        <p class="pl-5 ml-5"><input type="submit" name="btnSubmit" id="btnSubmit" value="Login"></p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#form1").validate({
+                errorLabelContainer: $("#form1 div.error")
+            })
+            $(".cancel").click(function () {
+                validator.resetForm();
+            })
+        })
+    </script>
+</body>
+
+</html>
